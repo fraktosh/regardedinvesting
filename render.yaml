@@ -1,0 +1,4 @@
+services:
+  - name: web
+    env: python
+    port: 8000  # Specify the port your Flask app listens on
