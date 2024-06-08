@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Allocation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Apple+SD+Gothic+Neo:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Apple SD Gothic Neo', sans-serif;
+            background-color: #000;
+            color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #00bcd4;
+            font-size: 3rem;
+            margin-top: 0;
+        }
+
+        label {
+            color: #f1f1f1;
+            font-size: 1.2rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background-color: #2e2e2e;
+            color: #fff;
+            font-size: 1.2rem;
+            width: 300px;
+            text-align: center;
+        }
+
+        button[type="submit"], .buy-button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #00bcd4;
+            color: #fff;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover, .buy-button:hover {
+            background-color: #0097a7;
+        }
+
+        .result-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .result-container h2 {
+            color: #00bcd4;
+            font-size: 2rem;
+        }
+
+        table {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #444;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        th {
+            background-color: #333;
+        }
+
+        td {
+            background-color: #222;
+        }
+
+        .total-investment {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00bcd4;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Placed Successfully!</h1>
+    <div class="response-container">
+        {% for response in responses %}
+        <div class="response-item">
+            <p><strong>Status:</strong> {{ response['status'] }}</p>
+            <p><strong>Order ID:</strong> {{ response['order_id'] }}</p>
+            <p><strong>Order Type:</strong> {{ response['order_type'] }}</p>
+            <!-- Include other relevant response details -->
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
